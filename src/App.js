@@ -4,46 +4,37 @@ import 'antd/dist/antd.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
-const dataSource = [
-  {
-    key: '1',
-    name: 'Mike',
-    age: 32,
-    address: '10 Downing Street',
-  },
-  {
-    key: '2',
-    name: 'John',
-    age: 42,
-    address: '10 Downing Street',
-  },
-];
 
 const columns = [
   {
     title: 'id',
     dataIndex: 'id',
     key: 'id',
+    sorter: (a, b) => a.id - b.id,
   },
   {
     title: 'name',
     dataIndex: 'name',
     key: 'name',
+    sorter: (a, b) => a.name < b.name,
   },
   {
     title: 'username',
     dataIndex: 'username',
     key: 'username',
+    sorter: (a, b) => a.username < b.username,
   },
   {
     title: 'email',
     dataIndex: 'email',
     key: 'email',
+    sorter: (a, b) => a.email < b.email,
   },
   {
     title: 'address.city',
     dataIndex: ["address","city"],
     key: 'address.city',
+    sorter: (a, b) => a.city < b.city,
   },
 ];
 
